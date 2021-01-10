@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-*, 
-*::before, 
+*,
+*::before,
 *::after {
     /* hérite de html */
     box-sizing: inherit;
@@ -15,17 +15,17 @@ html {
     /* size de base navigateur: 16px = 1 rem*/ 
     /* pour coder plus facilement avec 1rem = 10px -> 10px/16px = 0.625 = 62.5% */
     /* "rem" se base sur l'élément racine et non sur l'élément parent comme "em" */
-    font-size: 62.5%;
+    font-size: 10px;
 }
 
 body {
-    font-family: 'Open Sans', 'sans-serif';
+    font-family:  'Open Sans', sans-serif;
     font-weight: 400;
     line-height: 1.6;
     color: #777;
-    background-image: linear-gradient(to right bottom, #31708e, #568589);
-    background-repeat: no repeat;
+    background-image: linear-gradient(to right bottom, #31708e, #5085a5);
     background-size: cover;
+    background-repeat: no-repeat;
     /* 100 hauteur d'écran (view height) */
     min-height: 100vh;
 }
@@ -36,7 +36,7 @@ body {
     max-width: 120rem;
     margin: 8rem auto;
     background-color: #faf9f9;
-    box-shadow: 0 2rem 6rem rgba(0, 0, 0,0.3);
+    box-shadow: 0 2rem 6rem rgba(0,0,0,0.3);
     min-height: 50rem;
 }
 
@@ -76,15 +76,16 @@ body {
     margin-right: -3.25rem;
 }
 
+.searchButton {
+    border: none;
+    background-color: #f4f2f2;
+}
+
 .searchIcon {
     height: 2rem;
     width: 2rem;
     /* couleur de remplissage de l'icon svg */
     fill: #777;
-}
-
-.searchButton {
-    border: none;
 }
 
 /* -----------------------Navigation -------------------- */
@@ -118,7 +119,7 @@ body {
 }
 
 /* tous le "li" sauf le dernier */
-.sidebarItem:not(:last-child) {
+.side-navItem:not(:last-child) {
     margin-bottom: .5rem;
 }
 
@@ -136,7 +137,7 @@ body {
 
 .ficheHotel {
     background-color: #fff;
-    /* prend tout l'espace */
+    /* grow prend tout l'espace */
     flex: 1;
 }
 
@@ -172,13 +173,14 @@ body {
     font-size: 1.4rem;
     display: flex;
     padding: 4.5rem;
-    background: #faf9f9;
+    background-color: #faf9f9;
     border-bottom: 1px solid #f4f2f2;
 }
 
+
 .description {
     background-color: #fff;
-    box-shadow: 0 2rem 5rem rgba(0, 0, 0, .6);
+    box-shadow: 0 2rem 5rem rgba(0,0,0,0.06);
     padding: 3rem;
     flex: 0 0 60%;
     margin-right: 4.5rem;
@@ -198,7 +200,7 @@ body {
     flex-wrap: wrap;
 }
 
-.liste01 {
+.listEl {
     flex: 0 0 50%;
     margin-bottom: .7rem;
 }
@@ -210,7 +212,7 @@ body {
 
 .reserver {
     text-align: center;
-    flex: 0, 0, 55%;
+    flex: 0 0 55%;
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding: 1.5rem 0;
@@ -219,7 +221,7 @@ body {
     font-size: 2rem;
     color: white;
     background: #31708e;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
 }
 
 .reserver:hover {
@@ -239,6 +241,7 @@ body {
     width: 100%;
     display: block;
 }
+
 
 /* sans le premier enfant */
 .galleryPhotos:not(:nth-child(1)) {
