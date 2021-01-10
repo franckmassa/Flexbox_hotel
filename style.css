@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, 
+*::before, 
+*::after {
+    /* hérite de html */
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    /* size de base navigateur: 16px = 1 rem*/ 
+    /* pour coder plus facilement avec 1rem = 10px -> 10px/16px = 0.625 = 62.5% */
+    /* "rem" se base sur l'élément racine et non sur l'élément parent comme "em" */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', 'sans-serif';
+    font-weight: 400;
+    line-height: 1.6;
+    color: #777;
+    background-image: linear-gradient(to right bottom, #31708e, #568589);
+    background-repeat: no repeat;
+    background-size: cover;
+    /* 100 hauteur d'écran (view height) */
+    min-height: 100vh;
+}
+
+/* -----------------------Header -------------------- */
+
+.container {
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: #faf9f9;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0,0.3);
+    min-height: 50rem;
+}
+
+.header {
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: 1px solid #f4f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 3.25rem;
+    width: 5rem;
+    margin-left: 2rem;
+}
+
+.search {
+    /* grow: 0, shrink: 0, width: 40%*/
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchInput {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: #f4f2f2;
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    margin-right: -3.25rem;
+}
+
+.searchIcon {
+    height: 2rem;
+    width: 2rem;
+    /* couleur de remplissage de l'icon svg */
+    fill: #777;
+}
+
+.searchButton {
+    border: none;
+}
+
+/* -----------------------Navigation -------------------- */
+
+.content {
+    display: flex;
+}
+
+.side-navIcon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    fill: white;
+}
+
+.sidebar {
+    background-color: #8fc1e3;
+    flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-nav {
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+}
+
+.side-navItem {
+    position: relative;
+}
+
+/* tous le "li" sauf le dernier */
+.sidebarItem:not(:last-child) {
+    margin-bottom: .5rem;
+}
+
+.side-nav a {
+    color: #faf9f9;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+}
+
+/* -----------------------Titre Hotel -------------------- */
+
+.ficheHotel {
+    background-color: #fff;
+    /* prend tout l'espace */
+    flex: 1;
+}
+
+.overview {
+    display: flex;
+    background: #d1e5f3;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #f4f2f2;
+}
+
+.overviewHeading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 1.5rem 3rem;
+}
+
+.note {
+    display: flex;
+}
+
+.iconeEtoile {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: #31708e;
+}
+
+/* -----------------------Description -------------------- */
+
+.detail {
+    font-size: 1.4rem;
+    display: flex;
+    padding: 4.5rem;
+    background: #faf9f9;
+    border-bottom: 1px solid #f4f2f2;
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, .6);
+    padding: 3rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+}
+
+/* pas le dernier paragraphe */
+.paragraphe:not(:last-of-type) {
+    margin-bottom: 2rem;
+}
+
+.list {
+    margin: 3rem 0 0 2rem;
+    padding: 3rem 0;
+    border-top: 1px solid #f4f2f2;
+    border-bottom: 1px solid #f4f2f2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.liste01 {
+    flex: 0 0 50%;
+    margin-bottom: .7rem;
+}
+
+.btnReserver {
+    display: flex;
+    justify-content: center;
+}
+
+.reserver {
+    text-align: center;
+    flex: 0, 0, 55%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 1.5rem 0;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    background: #31708e;
+    transition: all .2s linear;
+}
+
+.reserver:hover {
+    background: #fff;
+    color: black;
+    border: 1px solid #31708e;
+}
+
+/* -----------------------Description -------------------- */
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo {
+    width: 100%;
+    display: block;
+}
+
+/* sans le premier enfant */
+.galleryPhotos:not(:nth-child(1)) {
+    margin-top: 1rem;
+}
